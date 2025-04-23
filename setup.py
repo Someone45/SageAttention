@@ -69,6 +69,7 @@ if not compute_capabilities:
     raise RuntimeError("No GPUs found. Please specify the target GPU architectures or build on a machine with GPUs.")
 else:
     print(f"Detect GPUs with compute capabilities: {compute_capabilities}")
+nvcc_cuda_version = get_nvcc_cuda_version(CUDA_HOME)
 
 # Validate the NVCC CUDA version.
 if nvcc_cuda_version < Version("12.0"):
